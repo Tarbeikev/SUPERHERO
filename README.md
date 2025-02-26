@@ -32,3 +32,50 @@ print(hero1.use_superpower())
 
 print(hero2.display_hero_info())
 print(hero2.use_superpower())
+
+
+ACTIVITY 2
+# Base class
+class Mover:
+    def move(self):
+        raise NotImplementedError("Subclass must implement this method")
+
+# Subclass for Animals
+class Animal(Mover):
+    def move(self):
+        print("Animal is moving")
+
+class Bird(Animal):
+    def move(self):
+        print("Flying 🐦")
+
+class Fish(Animal):
+    def move(self):
+        print("Swimming 🐟")
+
+# Subclass for Vehicles
+class Vehicle(Mover):
+    def move(self):
+        print("Vehicle is moving")
+
+class Car(Vehicle):
+    def move(self):
+        print("Driving 🚗")
+
+class Plane(Vehicle):
+    def move(self):
+        print("Flying ✈️")
+
+# Create instances of each class and call their move() method
+animal = Animal()
+bird = Bird()
+fish = Fish()
+car = Car()
+plane = Plane()
+
+# Demonstrate polymorphism
+movers = [animal, bird, fish, car, plane]
+
+for mover in movers:
+    mover.move()
+
